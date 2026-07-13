@@ -1,8 +1,6 @@
 <?php
 require_once "dbConnect.php";
 
-$first_name = $_POST['first_name'] ?? '';
-$last_name  = $_POST['last_name'] ?? '';
 $email      = $_POST['email'] ?? '';
 $password   = $_POST['password'] ?? '';
 
@@ -29,15 +27,15 @@ if (checkStmt->num_rows > 0){
 }  
 $checkStmt->close();
 
-$sql = "INSERT INTO userdata (first_name, last_name, email, hashedPassword, password_created
-        VALUES (?, ?, ?, ?, CURRENT_DATE)";
+$sql = "INSERT INTO userdata (email, hashedPassword, password_created
+        VALUES (?, ?, CURRENT_DATE)";
 $stmt = $conn->prepare($sql);
 
 if ($stmt === false) {
   die('Prepare failed: ' . htmlspecialchars($conn->error));
 }
 
-$stmt->bind_param("ssss", $first_name, $last_name, $email, $hashedPassword);
+$stmt->bind_param("ss", $email, $hashedPassword);
 
 if ($stmt->execute()){
   echo "Account created successfully";
