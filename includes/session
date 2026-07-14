@@ -20,6 +20,5 @@ if ($result && $result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $first_name = htmlspecialchars($row['name']); // Prevent XSS
 }
-?>
 
 ?>
