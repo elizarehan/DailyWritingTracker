@@ -7,7 +7,7 @@ $password   = $_POST['password'] ?? '';
 //hash the password
 $hashedPassword = password_hash('password', PASSWORD_DEFAULT);
 
-//check if email already exists
+//check if email already exists //ADD CHECK FOR USERNAME
 $checkSql  = "SELECT * FROM userdata WHERE email = ? LIMIT 1";
 $checkStmt = $conn->prepare($checkSql);
 
