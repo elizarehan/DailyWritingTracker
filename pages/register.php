@@ -29,9 +29,11 @@
             title="Must be at least 8 characters long"
         />
         <input type="submit" value="Create"/>
-        <br>
-        <p >Already have an account?</p>
-        <a href="login.php">Log In</a>
+    </form>
+    
+    <br>
+    <p >Already have an account?</p>
+    <a href="login.php">Log In</a>
             
 </body>
 
