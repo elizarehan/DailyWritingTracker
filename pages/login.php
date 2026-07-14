@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+  <h1>Log In</h1>
+  <br>
+  
+  <form id="LoginForm" action="../../database/verifyUser.php" method="POST">
+    <label for="email">Email: </label>
+    <input
+      name="email"
+      type="email"
+      required
+    />
+    <br>
+    <label for="password">Password: </label>
+    <input
+      name="password"
+      type="password"
+      required
+    />
+    <br>
+    <input type="submit" value="Login"/>
+  </form>
+  
+  <br>
+  <p>Don't have an account?</p>
+  <a href="register.php">Register</a>
+    
+</body>
+
+</html>
