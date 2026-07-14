@@ -19,6 +19,8 @@
             name="password"
             type="password"
             required
+            pattern=".{8,}"
+            title="Must be at least 8 characters long"
         />
         <input type="submit" value="Create"/>
         <br>
