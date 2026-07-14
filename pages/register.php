@@ -8,6 +8,12 @@
 <body>
     <h1>Create an account</h1>
     <form id="registerForm" action="../database/insertUser.php" method="POST">
+        <label for="username">Username: </label>
+        <input
+            name="username"
+            type="username"
+            required
+        />
         <label for="email">Email: </label>
         <input
             name="email"
