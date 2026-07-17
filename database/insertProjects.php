@@ -3,19 +3,19 @@ require_once "dbConnect.php";
 
 $title          = $_POST ['title'] ?? '';
 //cover_img     =
-$form           = $_POST ['form'] ?? '';
 $curr_words     = $_POST ['curr_words'] ?? '';
 $goal_words     = $_POST ['goal_words'] ?? '';
 $deadline       = $_POST ['deadline'] ?? '';
-$description    = $_POST ['description'] ?? '';
 $draft_link     = $_POST ['draft_link'] ?? '';
+$description    = $_POST ['description'] ?? '';
+$form           = $_POST ['form'] ?? '';
 $genre          = $_POST ['genre'] ?? '';
 $draft_num      = $_POST ['draft_num'] ?? '';
 $notes          = $_POST ['notes'] ?? '';
 
 //query template
-$sql = "INSERT INTO projects(title, form, curr_words, goal_words,
-        deadline, description, draft_link, genre, draft_num, notes, project_created)
+$sql = "INSERT INTO projects(title, curr_words, goal_words, deadline, draft_link,
+        description, form, genre, draft_num, notes, project_created)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_DATE)
         ";
 
@@ -26,9 +26,8 @@ if ($stmt === false) {
 }
 
 //bind variables
-$stmt->bind_param("s, s, i, i, s, s, s, s, s, s", $title, $form, $curr_words,
-                  $goal_words, $deadline, $description, $draft_link, $genre, 
-                  $draft_num, $notes);
+$stmt->bind_param("s, i, i, s, s, s, s, s, s, s", $title, $curr_words, $goal_words,
+                  $deadline, $draft_link, $description, $form, $genre, $draft_num, $notes);
 
 // Execute
 if ($stmt->execute()) {
