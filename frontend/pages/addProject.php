@@ -27,12 +27,16 @@
       id="curr_words"
       name="curr_words"
       type="number"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+      title="Please input a valid digit"
       />
     <label for="goal_words">Goal Word Count: </label>
     <input
       id="goal_words"
       name="goal_words"
       type="number"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+      title="Please input a valid digit"
     />
     <label for="deadline">Deadline: </label>
     <input
