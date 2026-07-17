@@ -1,5 +1,5 @@
 <?php
-require_once "dbConnect.php";
+require_once "../config/dbConnect.php";
 
 $title          = $_POST ['title'] ?? '';
 //cover_img     =
