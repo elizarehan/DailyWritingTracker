@@ -1,0 +1,2 @@
+# All .php files are PHP, regardless of embedded HTML/CSS
+*.php linguist-language=PHP
