@@ -1,4 +1,4 @@
-# All .php files are PHP, regardless of embedded HTML/CSS
+# Force all .php files to be recognized as PHP
 *.php linguist-language=PHP
 
 # Force all .sql files to be recognized as SQL
