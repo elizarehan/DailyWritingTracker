@@ -28,6 +28,7 @@
       name="curr_words"
       type="number"
       oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+      maxlength="6"
       title="Please input a valid digit"
       />
     <label for="goal_words">Goal Word Count: </label>
