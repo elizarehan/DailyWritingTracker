@@ -21,5 +21,21 @@ $sql = "UPDATE projects
 
 $stmt = conn->prepare;
 
-//continue
+if ($stmt === false) {
+    die('Prepare failed: ' . htmlspecialchars($conn->error));
+}
+
+$stmt->bind_param("sssssssssi", $title, $curr_words, $goal_words, $deadline, $draft_link,
+                $description, $form, $genre, $draft_num, $notes,
+                $id);
+
+if ($stmt->execute()) {
+    echo '<span style="color:green;">Form updated successfully</span>';
+} else {
+    echo '<span style="color:red">Error: ' . htmlspecialchars($stmt->error) . '</span>';
+}
+
+$stmt->close();
+$conn->close();
+
 ?>
