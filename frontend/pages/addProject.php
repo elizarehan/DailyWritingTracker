@@ -7,7 +7,7 @@
 
 <body>
   <h1>Add Project</h1>
-  <form id="addProject" action="../../backend/controllers/insertProjects.php" method="POST">
+  <form id="addProject" action="../../backend/controllers/insertProject.php" method="POST">
     <label for="title">Title: </label>
     <input
       id="title"
